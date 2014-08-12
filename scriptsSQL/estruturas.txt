@@ -1,0 +1,87 @@
+doacoes
+	ID             INT UNSIGNED NOT NULL PRIMARY KEY auto_increment
+	ID_Doador      INT NOT NULL
+	ID_Funcionario INT NOT NULL
+	Data_Doacao    TIMESTAMP
+doacoes_items
+	ID         INT UNSIGNED NOT NULL PRIMARY KEY auto_increment,
+	ID_Doacao  INT NOT NULL
+	ID_Livro   INT NOT NULL
+	Quantidade TINYINT
+doadores
+	ID            INT UNSIGNED NOT NULL PRIMARY KEY auto_increment
+	Nome          CHAR (20) NOT NULL
+	SobreNome     CHAR (20) NOT NULL
+	Sexo          ENUM ('MASCULINO','FEMININO')
+	Cidade        INT
+	Bairro        VARCHAR (30)
+	Rua           VARCHAR (30)
+	Numero_Casa   SMALLINT
+	Complemento   VARCHAR (20)
+	RG            VARCHAR (20)
+	Data_Nascto   DATE
+	Data_Cadastro TIMESTAMP
+	Telefone      CHAR (14)
+	Celular       CHAR (14)
+	status        TINYINT DEFAULT -1
+livros
+	ID            INT UNSIGNED NOT NULL PRIMARY KEY	auto_increment,
+	referencia    CHAR (20)
+	Titulo        VARCHAR (50) NOT NULL
+	Autor         INT
+	Editora       INT
+	Genero        INT
+	Categoria     INT
+	Fornecedor    INT
+	Qtd_Estoque   SMALLINT
+	Data_Cadastro TIMESTAMP
+	Status        TINYINT DEFAULT -1
+	locavel       TINYINT DEFAULT -1
+	Observacoes   TEXT
+	Armario       SMALLINT
+	Nivel         SMALLINT
+	Tombo         TINYINT
+locacao_livros
+	ID            INT UNSIGNED NOT NULL PRIMARY KEY	auto_increment
+	ID_Usuario       INT NOT NULL
+	ID_Funcionario   INT NOT NULL
+	Data_Locacao     TIMESTAMP
+	Status           TINYINT DEFAULT 0
+	Data_Finalizacao DATE
+locacao_livros_items
+	ID            INT UNSIGNED NOT NULL PRIMARY KEY	auto_increment
+	ID_Locacao        INT NOT NULL
+	ID_Livro          INT NOT NULL
+	ID_Funcionario    INT NOT NULL
+	Data_Devolucao    DATE NOT NULL
+	Devolvido_Em      DATE
+	Numero_Renovacoes TINYINT
+subcadastro
+	ID            INT UNSIGNED NOT NULL PRIMARY KEY	auto_increment
+	Descricao     VARCHAR (50) NOT NULL
+	Tipo_Cadastro SMALLINT NOT NULL
+usuarios
+	ID            INT UNSIGNED NOT NULL PRIMARY KEY	auto_increment
+	Nome         CHAR (20) NOT NULL
+	SobreNome    CHAR (20) NOT NULL
+	Sexo         ENUM ('MASCULINO','FEMININO') NOT NULL
+	Tipo_Usuario INT
+	Cidade       VARCHAR (50)
+	Bairro       VARCHAR (30)
+	Rua          VARCHAR (30)
+	Numero_Casa  SMALLINT
+	Complemento  VARCHAR (20)
+	RG           VARCHAR (20)
+	Data_Nascto  DATE
+	Status       TINYINT DEFAULT -1
+	Nivel        TINYINT DEFAULT 3
+	Telefone     CHAR (14)
+	Celular      CHAR (14)
+	EMail        VARCHAR (100)
+	Observacoes  TEXT
+usuarios_sistema
+	Login VARCHAR (255)
+	Senha VARCHAR (255)
+	Nivel TINYINT NOT NULL DEFAULT 3
+	ID    INT NOT NULL auto_increment
+	Nome  CHAR (15)

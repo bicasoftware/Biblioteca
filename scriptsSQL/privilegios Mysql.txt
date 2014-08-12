@@ -1,0 +1,10 @@
+#primeiro essa linha
+
+GRANT ALL PRIVILEGES ON *.* TO supervisor@'%' identified by 'master'
+
+#depois essa
+
+GRANT ALL PRIVILEGES ON *.* TO supervisor@'localhost' identified by 'master'
+
+# terminando com essa
+Flush privileges

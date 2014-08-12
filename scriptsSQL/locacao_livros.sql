@@ -1,0 +1,19 @@
+CREATE TABLE locacao_livros
+	(
+		ID INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+		ID_Usuario INT NOT NULL,
+		ID_Funcionario INT NOT NULL,
+		Data_Locacao TIMESTAMP,
+		INDEX(ID_Usuario)
+	)
+ENGINE MyIsam CHARSET utf8
+
+CREATE TABLE locacao_livros_items
+	(
+		ID INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+		ID_Livro INT NOT NULL,
+		Data_Devolucao DATE NOT NULL,
+		Numero_Renovacoes TINYINT,
+		INDEX(ID_Livro)
+	)
+ENGINE MyIsam CHARSET utf8
