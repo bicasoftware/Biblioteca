@@ -1,0 +1,4 @@
+forms/__history/*
+*.exe
+*.rar
+*.zip

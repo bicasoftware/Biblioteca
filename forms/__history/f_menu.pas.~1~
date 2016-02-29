@@ -47,7 +47,6 @@ type
     mnu_MAteriais1: TMenuItem;
     mnu_Colaboradores1: TMenuItem;
     mnu_Eventos2: TMenuItem;
-    Button1: TButton;
     procedure FormShow(Sender: TObject);
     procedure SaidadeLivros1Click(Sender: TObject);
     procedure DevoluodeLivros1Click(Sender: TObject);
